@@ -3,8 +3,8 @@
 Sitio web full stack de marketing digital con estrategia, contenido y datos. La aplicación combina una landing editorial con un feed de insights obtenido de la API pública de Dev.to, autenticación de usuarios y una biblioteca personal de artículos guardados.
 
 - Repositorio: [github.com/Giiraldo/project-estrategicamente](https://github.com/Giiraldo/project-estrategicamente)
-- Frontend desplegado: pendiente de publicación
-- API desplegada: pendiente de publicación
+- Demo: [project-estrategicamente-pqxi.vercel.app](https://project-estrategicamente-pqxi.vercel.app)
+- API: [project-estrategicamente.vercel.app](https://project-estrategicamente.vercel.app)
 
 ## Funcionalidades
 
@@ -160,27 +160,33 @@ Las pruebas cubren el health check, registro, validaciones, inicio de sesión, p
 
 ### MongoDB Atlas
 
-1. Crea un clúster gratuito en MongoDB Atlas.
-2. Crea un usuario de base de datos y permite el acceso desde la IP de Vercel (`0.0.0.0/0` para un proyecto académico).
-3. Copia la cadena de conexión y úsala como `MONGODB_URI`.
+1. Usa un clúster de MongoDB Atlas; el plan gratuito es suficiente.
+2. Crea un usuario de base de datos y permite el acceso desde Vercel (`0.0.0.0/0` para un proyecto académico).
+3. Usa una base de datos llamada `estrategicamente` y copia la cadena de conexión como `MONGODB_URI`.
 
 ### API en Vercel
 
 1. Importa el repositorio y selecciona `server` como directorio raíz.
-2. Configura `MONGODB_URI`, `JWT_SECRET` y `CLIENT_ORIGIN` (la URL del frontend desplegado).
-3. Despliega. `server/vercel.json` redirige todas las rutas a `api/index.ts`.
+2. Configura `MONGODB_URI`, `JWT_SECRET` y `CLIENT_ORIGIN=https://project-estrategicamente-pqxi.vercel.app`.
+3. Despliega. `server/vercel.json` redirige todas las rutas a `api/index.ts` e instala las dependencias necesarias para compilar TypeScript.
+4. Verifica el estado con `GET https://project-estrategicamente.vercel.app/health`.
+
+> `CLIENT_ORIGIN` debe coincidir exactamente con el origen del frontend, sin barra final. Para producción se configuró con la URL del frontend.
 
 ### Frontend en Vercel
 
 1. Crea un segundo proyecto desde el mismo repositorio y selecciona `client` como directorio raíz.
-2. Configura `VITE_API_URL` con la URL pública de la API.
+2. Configura `VITE_API_URL=https://project-estrategicamente.vercel.app`.
 3. Despliega. `client/vercel.json` permite que React Router resuelva las rutas al recargar la página.
+4. La aplicación queda disponible en `https://project-estrategicamente-pqxi.vercel.app`.
 
 ## Decisiones técnicas
 
 - La API de Dev.to se consume directamente desde el cliente porque es pública y permite CORS; el backend se reserva para autenticación y persistencia.
 - La sesión se guarda en `localStorage` y se valida contra `GET /users/me` al iniciar la aplicación.
 - El backend usa un middleware de conexión cacheada para funcionar tanto en local como en funciones serverless de Vercel.
+- El despliegue usa dos proyectos de Vercel desde el mismo repositorio: `server` para la API y `client` para la SPA.
+- `server/tsconfig.json` declara `typeRoots` y `server/src/app.ts` referencia `express.d.ts` para que TypeScript resuelva los tipos en el entorno serverless de Vercel.
 - Las contraseñas nunca se devuelven en las respuestas y los errores de validación se muestran en español.
 
 ## Autor
