@@ -1,0 +1,16 @@
+node_modules/
+dist/
+build/
+.vercel/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs and local files
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
