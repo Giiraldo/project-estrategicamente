@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Search } from './Icons'
+import './SearchForm.css'
 
 interface SearchFormProps {
   activeTag: string
@@ -33,6 +34,7 @@ export function SearchForm({ activeTag, onSearch }: SearchFormProps) {
         id="insights-search"
         name="tag"
         type="search"
+        required
         value={query}
         onChange={(event) => setQuery(event.target.value)}
         placeholder="Busca un tema: seo, branding, analytics..."

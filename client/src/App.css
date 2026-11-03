@@ -544,45 +544,6 @@
   margin-bottom: 20px;
 }
 
-.search-form {
-  display: flex;
-  flex: 1 1 340px;
-  align-items: center;
-  gap: 10px;
-  max-width: 460px;
-  padding: 6px 6px 6px 16px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--white);
-}
-
-.search-form__icon {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  color: var(--muted);
-}
-
-.search-form input {
-  flex: 1;
-  min-width: 0;
-  padding: 10px 0;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  font-size: 0.9rem;
-}
-
-.search-form input::placeholder {
-  color: var(--muted);
-}
-
-.search-form .button {
-  min-height: 40px;
-  padding: 0 16px;
-  font-size: 0.82rem;
-}
-
 .tag-filter {
   display: flex;
   flex-wrap: wrap;
@@ -1723,10 +1684,6 @@
 
   .insights__toolbar {
     align-items: stretch;
-  }
-
-  .search-form {
-    max-width: none;
   }
 
   .tag-filter {
