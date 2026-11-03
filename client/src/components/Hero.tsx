@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight, Sparkles } from './Icons'
+import './Hero.css'
 
 export function Hero() {
   return (

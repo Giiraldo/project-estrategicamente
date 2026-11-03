@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from '../components/Icons'
 import { usePageTitle } from '../hooks/usePageTitle'
+import './NotFound.css'
 
 export function NotFound() {
   usePageTitle('Página no encontrada')

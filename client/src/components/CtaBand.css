@@ -1,0 +1,50 @@
+.cta-band {
+  padding: 72px 0;
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.cta-band__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.cta-band h2 {
+  max-width: 640px;
+  font-size: clamp(2rem, 4.2vw, 3.6rem);
+}
+
+.cta-band p:not(.eyebrow) {
+  max-width: 520px;
+  margin-top: 14px;
+  font-size: 0.98rem;
+}
+
+.cta-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .cta-band__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .cta-band {
+    padding: 56px 0;
+  }
+
+  .cta-band__actions {
+    width: 100%;
+  }
+
+  .cta-band__actions .button {
+    flex: 1 1 auto;
+  }
+}

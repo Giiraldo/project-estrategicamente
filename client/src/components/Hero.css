@@ -1,0 +1,364 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 88px 0 80px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -220px;
+  right: -160px;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(200, 255, 77, 0.22),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(244, 241, 232, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 241, 232, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 80%);
+  pointer-events: none;
+}
+
+.hero__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero h1 {
+  max-width: 720px;
+  color: var(--paper);
+  font-size: clamp(2.6rem, 5.6vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.hero h1 em {
+  color: var(--lime);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.hero__lead {
+  max-width: 600px;
+  margin-top: 26px;
+  color: rgba(244, 241, 232, 0.7);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 52px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line-light);
+}
+
+.hero__stat strong {
+  display: block;
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.hero__stat span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(244, 241, 232, 0.52);
+  font-size: 0.78rem;
+}
+
+.hero__visual {
+  position: relative;
+  min-height: 500px;
+}
+
+.hero__orbit {
+  position: absolute;
+  border: 1px solid rgba(200, 255, 77, 0.16);
+  border-radius: 50%;
+}
+
+.hero__orbit--one {
+  inset: 8% 6%;
+}
+
+.hero__orbit--two {
+  inset: 20% 18%;
+  border-color: rgba(244, 241, 232, 0.09);
+}
+
+.hero__monogram {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: transparent;
+  font-family: var(--font-display);
+  font-size: clamp(10rem, 24vw, 17rem);
+  font-weight: 800;
+  line-height: 1;
+  transform: rotate(-8deg);
+  -webkit-text-stroke: 1px rgba(200, 255, 77, 0.26);
+}
+
+.strategy-card {
+  position: absolute;
+  width: min(180px, 42%);
+  padding: 16px;
+  border: 1px solid rgba(244, 241, 232, 0.14);
+  border-radius: 18px;
+  background: rgba(21, 26, 22, 0.72);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(14px);
+  animation: float-card 7s ease-in-out infinite;
+}
+
+.strategy-card--seo {
+  top: 4%;
+  left: 0;
+  animation-delay: -1s;
+}
+
+.strategy-card--content {
+  top: 14%;
+  right: 0;
+  animation-delay: -3s;
+}
+
+.strategy-card--data {
+  bottom: 16%;
+  left: 4%;
+  animation-delay: -5s;
+}
+
+.strategy-card--conversion {
+  right: 2%;
+  bottom: 6%;
+  animation-delay: -2s;
+}
+
+.strategy-card__label {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--lime);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.strategy-card__bars,
+.strategy-card__lines {
+  display: grid;
+  gap: 7px;
+}
+
+.strategy-card__bars span,
+.strategy-card__lines span {
+  display: block;
+  height: 6px;
+  border-radius: 999px;
+}
+
+.strategy-card__bars span {
+  background: rgba(200, 255, 77, 0.55);
+}
+
+.strategy-card__bars span:nth-child(2) {
+  background: rgba(244, 241, 232, 0.28);
+}
+
+.strategy-card__bars span:nth-child(3) {
+  background: rgba(200, 255, 77, 0.32);
+}
+
+.strategy-card__lines span {
+  height: 5px;
+  background: rgba(244, 241, 232, 0.3);
+}
+
+.strategy-card__lines span:nth-child(2) {
+  width: 76%;
+}
+
+.strategy-card__lines span:nth-child(3) {
+  width: 52%;
+}
+
+.strategy-card__chart {
+  width: 100%;
+  height: auto;
+  color: var(--lime);
+}
+
+.strategy-card__arrow {
+  display: block;
+  color: var(--lime);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero__badge {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--ink);
+  font-size: 0.76rem;
+  font-weight: 800;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  box-shadow: 0 12px 30px rgba(200, 255, 77, 0.18);
+}
+
+.hero__badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero__grid {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 64px 0 72px;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__content {
+    max-width: 720px;
+  }
+
+  .hero__visual {
+    width: min(520px, 100%);
+    min-height: 440px;
+    margin: 8px auto 0;
+  }
+
+  .hero__stats {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 720px) {
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 10vw, 4rem);
+  }
+
+  .hero__visual {
+    min-height: 400px;
+  }
+
+  .strategy-card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .strategy-card__label {
+    margin-bottom: 8px;
+    font-size: 0.6rem;
+  }
+
+  .hero__badge {
+    padding: 8px 12px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero__stats {
+    gap: 20px;
+  }
+
+  .hero__stat {
+    flex: 1 1 40%;
+  }
+
+  .hero__actions .button {
+    width: 100%;
+  }
+
+  .hero__visual {
+    min-height: 340px;
+  }
+
+  .hero__monogram {
+    font-size: 9rem;
+  }
+
+  .strategy-card {
+    width: 44%;
+  }
+
+  .strategy-card--seo {
+    top: 0;
+  }
+
+  .strategy-card--content {
+    top: 10%;
+  }
+
+  .strategy-card--data {
+    bottom: 18%;
+  }
+
+  .strategy-card--conversion {
+    bottom: 8%;
+  }
+}

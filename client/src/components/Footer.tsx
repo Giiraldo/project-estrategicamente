@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, Github } from './Icons'
 import { Logo } from './Logo'
+import './Footer.css'
 
 const REPOSITORY_URL = 'https://github.com/Giiraldo/project-estrategicamente'
 const YEAR = new Date().getFullYear()

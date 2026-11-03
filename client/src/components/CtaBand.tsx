@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useCurrentUser } from '../contexts/CurrentUserContext'
 import { ArrowRight } from './Icons'
+import './CtaBand.css'
 
 export function CtaBand() {
   const { currentUser } = useCurrentUser()

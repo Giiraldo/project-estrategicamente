@@ -1,16 +1,5 @@
 import type { DevToArticle } from '../types'
-
-const DEVTO_API_URL = 'https://dev.to/api'
-export const INSIGHTS_PER_PAGE = 9
-
-export const MARKETING_TAGS = [
-  { value: 'marketing', label: 'Marketing' },
-  { value: 'seo', label: 'SEO' },
-  { value: 'socialmedia', label: 'Social media' },
-  { value: 'content', label: 'Contenido' },
-  { value: 'branding', label: 'Branding' },
-  { value: 'analytics', label: 'Analytics' },
-] as const
+import { DEVTO_API_URL, DEVTO_ERROR_MESSAGE, INSIGHTS_PER_PAGE, MARKETING_TAGS } from '../config/constants'
 
 interface FetchArticlesParams {
   tag: string
@@ -39,7 +28,7 @@ export async function getArticles({
   })
 
   if (!response.ok) {
-    throw new Error('No se pudieron obtener los artículos.')
+    throw new Error(DEVTO_ERROR_MESSAGE)
   }
 
   return (await response.json()) as DevToArticle[]

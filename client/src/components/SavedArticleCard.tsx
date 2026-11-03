@@ -3,6 +3,7 @@ import type { SavedArticle } from '../types'
 import { getTagLabel } from '../utils/devtoApi'
 import { formatDate } from '../utils/format'
 import { Calendar, Sparkles, Trash } from './Icons'
+import './ArticleCard.css'
 
 interface SavedArticleCardProps {
   article: SavedArticle

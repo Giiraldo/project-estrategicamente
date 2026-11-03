@@ -6,6 +6,7 @@ import { ErrorMessage } from './ErrorMessage'
 import { ArrowRight } from './Icons'
 import { SearchForm } from './SearchForm'
 import { TagFilter } from './TagFilter'
+import './InsightsSection.css'
 
 interface InsightsSectionProps {
   tag: string
@@ -21,11 +22,13 @@ interface InsightsSectionProps {
   onSave: (article: DevToArticle) => Promise<void>
 }
 
+const SKELETON_IDS = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth']
+
 function SkeletonGrid() {
   return (
     <div className="insights__grid" aria-hidden="true">
-      {Array.from({ length: 6 }, (_, index) => (
-        <div className="skeleton-card" key={index}>
+      {SKELETON_IDS.map((id) => (
+        <div className="skeleton-card" key={id}>
           <div className="skeleton skeleton-card__cover" />
           <div className="skeleton-card__body">
             <div className="skeleton skeleton-card__meta" />

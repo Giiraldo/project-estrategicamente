@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight, Github } from '../components/Icons'
 import { usePageTitle } from '../hooks/usePageTitle'
+import './About.css'
 
 const REPOSITORY_URL = 'https://github.com/Giiraldo/project-estrategicamente'
 

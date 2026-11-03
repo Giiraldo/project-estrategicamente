@@ -1,7 +1,5 @@
 import type { CachedInsights } from '../types'
-
-const TOKEN_KEY = 'estrategicamente.token'
-const INSIGHTS_KEY = 'estrategicamente.insights'
+import { INSIGHTS_KEY, TOKEN_KEY } from '../config/constants'
 
 function isBrowser(): boolean {
   return typeof window !== 'undefined'

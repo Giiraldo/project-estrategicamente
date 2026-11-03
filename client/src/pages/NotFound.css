@@ -1,0 +1,15 @@
+.not-found {
+  padding: 120px 0;
+  background: var(--paper);
+}
+
+.not-found h1 {
+  max-width: 760px;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+}
+
+.not-found p:not(.eyebrow) {
+  max-width: 520px;
+  margin: 20px 0 32px;
+  color: var(--muted);
+}
