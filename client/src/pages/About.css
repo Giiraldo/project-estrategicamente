@@ -1,0 +1,161 @@
+.about-hero {
+  padding: 96px 0 64px;
+  background: var(--paper);
+}
+
+.about-hero h1 {
+  max-width: 980px;
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+}
+
+.about-hero h1 em {
+  color: var(--coral);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.about-hero p:not(.eyebrow) {
+  max-width: 640px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.about-content {
+  padding-top: 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.about-card {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--white);
+}
+
+.about-card h2 {
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+}
+
+.about-card p {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.about-card--dark {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.about-card--dark h2 {
+  color: var(--paper);
+}
+
+.about-card--dark p {
+  color: rgba(244, 241, 232, 0.66);
+}
+
+.about-list {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.about-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: start;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.about-list span {
+  padding-top: 2px;
+  color: var(--coral);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.stack-list span {
+  padding: 7px 12px;
+  border: 1px solid var(--line-light);
+  border-radius: 999px;
+  color: rgba(244, 241, 232, 0.78);
+  font-size: 0.76rem;
+}
+
+.about-author {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 22px;
+}
+
+.about-author__avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.about-author h2 {
+  margin-bottom: 8px;
+}
+
+.about-author .eyebrow {
+  margin-bottom: 10px;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.text-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 900px) {
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+
+  .about-author {
+    flex-direction: column;
+  }
+}
