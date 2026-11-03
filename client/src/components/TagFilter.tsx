@@ -1,4 +1,4 @@
-import { MARKETING_TAGS } from '../utils/devtoApi'
+import { MARKETING_TAGS } from '../config/constants'
 
 interface TagFilterProps {
   activeTag: string

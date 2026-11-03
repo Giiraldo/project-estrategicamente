@@ -1,13 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { DevToArticle } from '../types'
-import {
-  getArticles,
-  INSIGHTS_PER_PAGE,
-} from '../utils/devtoApi'
+import { INSIGHTS_ERROR_MESSAGE, INSIGHTS_PER_PAGE } from '../config/constants'
+import { getArticles } from '../utils/devtoApi'
 import { readCachedInsights, writeCachedInsights } from '../utils/storage'
-
-export const INSIGHTS_ERROR_MESSAGE =
-  'Algo salió mal con la solicitud. Puede ser un problema de conexión o del servidor. Inténtalo de nuevo más tarde.'
 
 function mergeArticles(
   current: DevToArticle[],

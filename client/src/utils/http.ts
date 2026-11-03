@@ -1,8 +1,5 @@
 import { getToken } from './storage'
-
-const API_URL = (
-  (import.meta.env.VITE_API_URL as string | undefined) ?? 'http://localhost:3001'
-).replace(/\/$/, '')
+import { API_URL, REQUEST_ERROR_MESSAGE } from '../config/constants'
 
 export class ApiError extends Error {
   status: number
@@ -42,7 +39,7 @@ export async function request<T>(
 
   if (!response.ok) {
     throw new ApiError(
-      data?.message ?? 'No se pudo completar la solicitud.',
+      data?.message ?? REQUEST_ERROR_MESSAGE,
       response.status,
     )
   }
