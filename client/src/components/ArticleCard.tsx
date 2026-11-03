@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { DevToArticle } from '../types'
 import { getTagLabel } from '../utils/devtoApi'
 import { formatDate } from '../utils/format'
+import './ArticleCard.css'
 import {
   Bookmark,
   BookmarkCheck,

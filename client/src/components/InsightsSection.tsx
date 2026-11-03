@@ -6,6 +6,7 @@ import { ErrorMessage } from './ErrorMessage'
 import { ArrowRight } from './Icons'
 import { SearchForm } from './SearchForm'
 import { TagFilter } from './TagFilter'
+import './InsightsSection.css'
 
 interface InsightsSectionProps {
   tag: string

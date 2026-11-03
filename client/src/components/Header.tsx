@@ -4,6 +4,7 @@ import { useCurrentUser } from '../contexts/CurrentUserContext'
 import { getInitials } from '../utils/format'
 import { Close, LogOut, Menu } from './Icons'
 import { Logo } from './Logo'
+import './Header.css'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from './Icons'
 import { Logo } from './Logo'
+import './AuthLayout.css'
 
 interface AuthLayoutProps {
   eyebrow: string

@@ -1,4 +1,5 @@
 import { Chart, Layers, Target } from './Icons'
+import './ValueProps.css'
 
 const values = [
   {
