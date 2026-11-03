@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Sparkles } from './Icons'
+import './StatusCard.css'
 
 interface EmptyStateProps {
   title: string

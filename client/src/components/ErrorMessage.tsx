@@ -1,4 +1,5 @@
 import { AlertCircle } from './Icons'
+import './StatusCard.css'
 
 interface ErrorMessageProps {
   message: string

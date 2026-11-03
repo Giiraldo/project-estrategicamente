@@ -1,4 +1,5 @@
 import { MARKETING_TAGS } from '../config/constants'
+import './TagFilter.css'
 
 interface TagFilterProps {
   activeTag: string
