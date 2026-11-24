@@ -1,5 +1,9 @@
 # ESTRATEGICAMENTE
 
+[Español](README.md) · [English](README.en.md)
+
+> Proyecto individual desarrollado durante mi formación en desarrollo web en [TripleTen](https://tripleten.com/).
+
 Sitio web full stack de marketing digital con estrategia, contenido y datos. La aplicación combina una landing editorial con un feed de insights obtenido de la API pública de Dev.to, autenticación de usuarios y una biblioteca personal de artículos guardados.
 
 - Repositorio: [github.com/Giiraldo/project-estrategicamente](https://github.com/Giiraldo/project-estrategicamente)
@@ -161,7 +165,7 @@ Las pruebas cubren el health check, registro, validaciones, inicio de sesión, p
 ### MongoDB Atlas
 
 1. Usa un clúster de MongoDB Atlas; el plan gratuito es suficiente.
-2. Crea un usuario de base de datos y permite el acceso desde Vercel (`0.0.0.0/0` para un proyecto académico).
+2. Crea un usuario de base de datos y configura el acceso de red para el entorno de despliegue. Evita reglas amplias como `0.0.0.0/0` en producción.
 3. Usa una base de datos llamada `estrategicamente` y copia la cadena de conexión como `MONGODB_URI`.
 
 ### API en Vercel
